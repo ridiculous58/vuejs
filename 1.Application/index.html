@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="app.js"></script>
+</head>
+<body>
+    <div id="app1">
+      <h1>{{ message }}</h1>
+    </div>
+    <!--v-if-->
+    <div id="app2">
+        <h1 v-if="isLoggedIn">{{ message }} {{ username }}</h1>
+        <h1 v-if="!isLoggedIn">anon user</h1>
+        <!--v-show => make display:none;-->
+        <h1 v-show="isLoggedIn">{{ message }} {{ username }}</h1>
+        <h1 v-show="!isLoggedIn">anon user</h1>
+    </div>
+    <!--v-html-->
+    <div id="app3">
+        <div v-html="message"></div>
+    </div>
+    <!--v-text-->
+    <div id="app4">
+        <div v-text="message"></div>
+    </div>
+</body>
+</html>
